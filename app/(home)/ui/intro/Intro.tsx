@@ -5,10 +5,15 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { BsArrowRight, BsGithub, BsLinkedin } from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi'
+import TypeEffect from "@/app/(home)/components/type-effect";
+
+import {useSectionInView} from "@/app/(home)/lib/hooks";
 
 export default function Intro() {
+    const { ref } = useSectionInView("Home");
+
   return (
-    <section className='mb-2 max-w-[50rem'>
+    <section className='mb-2 max-w-[50rem scroll-mt-28' id="home" ref={ref}>
         <div className='flex items-center justify-center'>
             <div className='relative'>
                 <motion.div
@@ -45,16 +50,17 @@ export default function Intro() {
             </div>
             
         </div>
-        <motion.p className='mb-10 mt-8 px-4 text-2xl md:text-center leading-[1.5] sm:text-4xl text-left'
+        <motion.div className='mb-10 mt-8 px-4 text-2xl md:text-center leading-[1.5] sm:text-4xl text-left'
             initial = {{ opacity: 0, y: 300}}
             animate = {{ opacity: 1, y: 0}}
         >
-            <span className='font-bold'> Hello, I'm Kevin Ndanyi.</span> I'm a {" "} <span className='font-bold'>Full-stack Developer</span> 
-            <br /> with {" "} <span className='font-bold'></span>5 Years of experience. I enjoy building <span className='font-bold'>web and mobile Apps</span>
-            <br />
-            My focus is
-            <span className='uppercase font-bold'> react, react-native and nextjs.</span>
-        </motion.p>
+            {/*<span className='font-bold'> Hello, I'm Kevin Ndanyi.</span> I'm a {" "} <span className='font-bold'>Full-stack Developer</span> */}
+            {/*<br /> with {" "} <span className='font-bold'></span>5 Years of experience. I enjoy building <span className='font-bold'>web and mobile Apps</span>*/}
+            {/*<br />*/}
+            {/*My focus is*/}
+            {/*<span className='uppercase font-bold'> react, react-native and nextjs.</span>*/}
+            <TypeEffect />
+        </motion.div>
         <motion.div className='flex flex-col sm:flex-row items-center justify-center gap-8 px-4 text-lg font-medium'
             initial= {{ opacity: 0, y: 100}}
             animate = {{ opacity:1, y: 0}}
